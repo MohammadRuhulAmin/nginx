@@ -38,7 +38,17 @@ Server Context:
 - it is the child context of HTTP context
 - Multiple server context can be created parally inside http context
 Location Context:
-- This is the Child Context of Server Context.
+- This is the Child Context of Server Context. 
+- It decides how to process the request url.
+- multiple location context can be used inside server context.
+- nested location context can be used for request url processing. 
+```sh
+location location_modifier location_match{
+}
+location = /about{
+    return 200 "hellow world";
+}
+```
 Upstream Context:
 - used for load balancer
 - used for upstream servers
@@ -50,3 +60,10 @@ will be standby.
 Mail Context:
 - Used for mail protocol
 
+
+---
+
+Return and Rewrite Directive:
+
+Return:
+- It can be declared inside server directive or location directive
