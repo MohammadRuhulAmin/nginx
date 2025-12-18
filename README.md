@@ -1,5 +1,5 @@
 # Nginx
-
+is a single process application
 1. Installation setup: 
 
 ```sh
